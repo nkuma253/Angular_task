@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
+ 
   title = 'app';
   isEdit = false;
   selectedPrimaryId: number;
@@ -15,13 +17,12 @@ export class AppComponent {
   public year: number;
   public Phone: number;
   public Address: number;
-  public rows: Array<{ primaryId: number, id: number, name: string, year: number, Phone: number, Address: number }> = [];
+  public Salary: number;
+  public rows: Array<{ primaryId: number, id: number, name: string, year: number, Phone: number, Address: number ,Salary: number}> = [];
+
 
   buttonClicked() {
-    // if(this.id = "", this.name = '',  this.year = ''){
-
-
-    // }
+  
     if (this.isEdit) {
       this.rows.forEach(row => {
         console.log(row);
@@ -31,12 +32,16 @@ export class AppComponent {
           row.year = this.year;
           row.Phone = this.Phone;
           row.Address = this.Address;
+          row.Salary = this.Salary;
+     
         }
       });
       this.isEdit = false;
     } else {
+
+      
       const randomNo = Math.random() * 10;
-      this.rows.push({ primaryId: randomNo, id: this.id, name: this.name, year: this.year, Phone: this.Phone, Address: this.Address });
+      this.rows.push({ primaryId: randomNo, id: this.id, name: this.name, year: this.year, Phone: this.Phone, Address: this.Address, Salary:this.Salary });
     }
 
     //if you want to clear input
@@ -50,6 +55,7 @@ reset(){
   this.year = null;
   this.Phone = null;
   this.Address = null;
+  this.Salary = null;
 
 
 }

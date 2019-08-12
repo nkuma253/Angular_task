@@ -1,59 +1,99 @@
-<h1 style="text-align: center;">"Welcome to the Record table"</h1>
-<div col-sm-6 style ="text-align: center;">
- <input type="number" [(ngModel)]="id" placeholder="id" required />
- <input type="text" [(ngModel)]="name" placeholder="name" required /><br><br>
- <input type="number" [(ngModel)]="year" placeholder="year" required />
- <input type="number" [(ngModel)]="Phone" placeholder="phone" required /><br><br>
- <input type="text" [(ngModel)]="Address" placeholder="Address" required />
- <button (click)="buttonClicked()">Submit</button>
- <button (click)="reset()">Reset</button>
- </div>
- <hr />
+<div class="container">
 
- 
-<div style="text-align: center;" class="table table-striped table-bordered">
-  
-    <table style="text-align: center;" width="300" class="table table-responsive table-striped">
-          
-        <tr style="text-align: center;">
-            <th>id</th>
-            <th>name</th>
-            <th>year</th>
-            <th>Phone</th>
-            <th>Address</th>
-            <th>Action</th>
-        </tr>
-        <!-- <tr *ngFor="let field of fieldArray; let i = index">
-                    <td>
-                        <input [(ngModel)]="field.code" class="form-control" type="text" name="{{field.id}}" />
-                    </td>
-                    <td>
-                        <input [(ngModel)]="field.name" class="form-control" type="text" name="{{field.name}}" />
-                    </td>
-                    <td>
-                        <input [(ngModel)]="field.price" class="form-control" type="text" name="{{field.year}}" />
-                    </td>
-                    <td>
-                        <button class="btn btn-default"  type="button" (click)="deleteFieldValue(i)">Delete</button>
-                    </td>
-                </tr> -->
+        <u>  <div class="logo">"Welcome to the Employee Record table"</div></u>
+    <div class="register-item">
+        <div col-sm-6 style="text-align: center;">
+            <div class="form-field">
+                <label class="user"><span><u>[1] Please Enter Your Employee ID</u></span></label>
+                <input name="name"  style="
+                margin-left: 104px;
+            " type="number" onKeyPress="if(this.value.length==6) return false;" class="form-input" placeholder="Name" [(ngModel)]="id " placeholder="id"
+                    required />
+            </div>
+            <div class="form-field">
+                <label class="user" for="register-username"><span><u>[2] Please Enetr Your Name</u></span></label>
+                <input name="name" style="
+                margin-left: 149px;
+            "  id="register-username"   onKeyPress="if(this.value.length==15) return false;" type="text" class="form-input" placeholder="Name"
+                    [(ngModel)]="name" required />
+            </div>
 
 
-        <tr *ngFor="let row of rows;let i = index">
-            <td >{{row.id}}</td>
-            <td>{{row.name}}</td>
-            <td>{{row.year}}</td>
-            <td>{{row.Phone}}</td>
-            <td>{{row.Address}}</td>
-            <td><button (click)="buttondelete()" style="
-                    width: 47px;
-                "> delete</button></td>
-                 <td><button (click)="edit(row)" style="
-                    width: 47px;
-                "> edit</button></td>
-        </tr>
-    </table>
-    <div>
+            <div class="form-field">
+                <label class="user" for="register-username"><span ><u>[3] Company Joining YEAR</u></span></label>
+                <input name="name" style="
+                margin-left: 156px;
+            "  id="register-username"  onKeyPress="if(this.value.length==8) return false;" type="number" class="form-input" [(ngModel)]="year"
+                    placeholder="year" required>
+            </div>
+            <div class="form-field">
+                <label class="user" for="register-username"><span ><u>[4] Please Eneter Your PHONE Number</u></span></label>
+                <input name="name" style="
+                margin-left: 69px;
+            "  id="register-username"  onKeyPress="if(this.value.length==10) return false;" type="number" class="form-input" [(ngModel)]="Phone"
+                    placeholder="phone" required>
+            </div>
+            <div class="form-field">
+                <label class="user" for="register-username"><span><u>[5] Please Enter Your Address</u></span></label>
+                <input name="name" style="
+                margin-left: 136px;
+            "  id="register-username" type="text" class="form-input" [(ngModel)]="Address"
+                    placeholder="Address" required>
+            </div>
+            <div class="form-field">
+                    <label class="user" for="register-username"><span  ><u>[6] Please Enter Your Salary</u></span></label>
+                    <input name="name" style="
+                    margin-left: 151px;
+                "  id="register-username"  onKeyPress="if(this.value.length==7) return false;" type="number" class="form-input" [(ngModel)]="Salary"
+                        placeholder="Salary" required>
+                </div>
 
-        <hr />
+            <div   class="form-field">
+               <label class="user" for="register-username"><span ><u>[7] Please Click Your Action</u></span></label> 
+                         
+                <div><button style="
+                    margin-left: 154px;
+                " type="button"  name="button"    class="btn btn-primary" (click)="buttonClicked()" [disabled]="id === ''">Submit</button></div>
+                <div style="
+            margin-left: 36px;
+        "><button type="button" class="btn btn-primary" (click)="reset()">Reset</button></div>
+
+            </div>
        
+  
+
+
+            <div class="col-md-6" style="text-align: center;" class="table table-striped table-bordered">
+
+                <table style="text-align: center;" class="table table-responsive table-striped">
+
+                    <tr style="text-align: center;" >
+                        <th class="thwidth">id</th>
+                        <th class="thwidth">name</th>
+                        <th class="thwidth">year</th>
+                        <th class="thwidth">Phone</th>
+                        <th class="thwidth">Address</th>
+                        <th class="thwidth">Salary</th>
+                        <th class="thwidth">Action1</th>
+                        <th class="thwidth">Action2</th>
+                    </tr>
+
+
+
+                    <tr *ngFor="let row of rows;let i = index">
+                        <td>{{row.id}}</td>
+                        <td>{{row.name}}</td>
+                        <td>{{row.year|date:'dd.MM.yyyy'}}</td>
+                        <td>{{row.Phone}}</td>
+                        <td>{{row.Address}}</td>
+                        <td> {{row.Salary| currency:"&#8377;"}}</td>
+                        <td><button class="btn btn-primary" (click)="buttondelete()"> delete</button></td>
+
+                        <td><button class="btn btn-primary" (click)="edit(row)"> edit</button></td>
+                    </tr>
+                </table>
+                <div>
+
+                 
+                </div>
+            </div>
