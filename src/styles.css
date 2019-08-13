@@ -59,4 +59,9 @@
     width: 145px;
 
 }
+input:hover, input:focus {
+    background-color: burlywood;
+    border: 3px solid rgb(0, 26, 255);
+    color:#000000;
+   }
   
