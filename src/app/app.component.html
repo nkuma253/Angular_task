@@ -2,78 +2,66 @@
         <div class="row"> <div class="logo col-lg-12">Welcome to the Employee Record table</div></div>
           
         
-        <div class="register-item">
-        <div col-sm-6 style="text-align: center;">
-        <div class="form-field">
+        <div class="row register-item">
+        <div class="col-sm-6">
+        <!-- <div class="form-field">
            <label class="user"><span><u>[1] Please Enter Your Employee ID</u></span></label>
-           <input name="name"  style="
-           margin-left: 104px;
-           " type="number" onKeyPress="if(this.value.length==6) return false;" class="form-input" placeholder="Name" [(ngModel)]="id " placeholder="id"
+           <input name="name" type="number" onKeyPress="if(this.value.length==6) return false;" class="form-input" placeholder="Name" [(ngModel)]="id " placeholder="id"
            required />
-        </div>
+        </div> -->
         <div class="form-field">
-           <label class="user" for="register-username"><span><u>[2] Please Enetr Your Name</u></span></label>
-           <input name="name" style="
-           margin-left: 149px;
-           "  id="register-username"   onKeyPress="if(this.value.length==15) return false;" type="text" class="form-input" placeholder="Name"
+           <label class="user" for="register-username"><span>Please Enetr Your Name</span></label>
+           <input name="name" id="register-username"   onKeyPress="if(this.value.length==15) return false;" type="text" class="form-input" placeholder="Name"
            [(ngModel)]="name" required />
         </div>
         <div class="form-field">
-           <label class="user" for="register-username"><span ><u>[3] Company Joining YEAR</u></span></label>
-           <input name="name" style="
-           margin-left: 156px;
-           "  id="register-username"   type="date" class="form-input" [(ngModel)]="year"
+           <label class="user" for="register-username"><span >Company Joining YEAR</span></label>
+           <input name="name" id="register-username"   type="date" class="form-input" [(ngModel)]="year"
            placeholder="dd-mm-yyyy" required>
         </div>
         <div class="form-field">
-           <label class="user" for="register-username"><span ><u>[4] Please Eneter Your PHONE Number</u></span></label>
-           <input name="name" style="
-           margin-left: 69px;
-           "  id="register-username"  onKeyPress="if(this.value.length==10) return false;" type="number" class="form-input" [(ngModel)]="Phone"
+           <label class="user" for="register-username"><span >Please Eneter Your PHONE Number</span></label>
+           <input name="name"id="register-username"  onKeyPress="if(this.value.length==10) return false;" type="number" class="form-input" [(ngModel)]="Phone"
            placeholder="phone" required>
         </div>
         <div class="form-field">
-           <label class="user" for="register-username"><span><u>[5] Please Enter Your Address</u></span></label>
-           <input name="name" style="
-           margin-left: 136px;
-           "  id="register-username" type="text" class="form-input" [(ngModel)]="Address"
+           <label class="user" for="register-username"><span>Please Enter Your Address</span></label>
+           <input name="name" id="register-username" type="text" class="form-input" [(ngModel)]="Address"
            placeholder="Address" required>
         </div>
         <div class="form-field">
-           <label class="user" for="register-username"><span  ><u>[6] Please Enter Your Salary</u></span></label>
-           <input name="name" style="
-           margin-left: 151px;
-           "  id="register-username"  onKeyPress="if(this.value.length==7) return false;" type="number" class="form-input" [(ngModel)]="Salary"
+           <label class="user" for="register-username"><span  > Please Enter Your Salary</span></label>
+           <input name="name" id="register-username"  onKeyPress="if(this.value.length==7) return false;" type="number" class="form-input" [(ngModel)]="Salary"
            placeholder="Salary" required>
         </div>
-        <div class="form-field">
-           <label class="user" for="register-username"><span  ><u>[7] Please upload Your Picture</u></span></label>   
-           <input
-           style="display: none"
-           type="file" (change)="onFileChanged($event)"
-           #fileInput>
-           <button style="
-              margin-left: 128px;
-              "  class="btn btn-primary" (click)="fileInput.click()">Select File</button>
-           <button style="
-              margin-left: 12px;
-              " class="btn btn-primary" (click)="onUpload()">Upload!</button>
-        </div>
+        
         <div   class="form-field">
-           <label class="user" for="register-username"><span ><u>[8] Please Click Your Action</u></span></label> 
-           <div><button style="
-              margin-left: 154px;
-              " type="button"  name="button"    class="btn btn-primary" (click)="buttonClicked()" [disabled]="id === ''">Submit</button>
-           </div>
-           <div style="
-              margin-left: 36px;
-              "><button type="button" class="btn btn-primary" (click)="reset()">Reset</button></div>
+           <label class="user" for="register-username"><span > Please Click Your Action</span></label> 
+           
+              <button type="button" style="margin-right:10px; "  name="button"    class="btn btn-success  btn-sm" (click)="buttonClicked()" [disabled]="id === ''">Submit</button>
+              <button type="button" class="btn btn-warning btn-sm" (click)="reset()">Reset</button>
+           
+           
         </div>
-        <input type="text" class="form-control"  type="text" style="width:33%" name="search" [(ngModel)]="searchText" autocomplete="off" (input)="filterData()" placeholder="&#61442;  Start searching for a employee by  name "><br>
-        <div class="col-md-6" style="text-align: center;" class="table table-striped table-bordered">
-           <table style="text-align: center;" class="table table-responsive table-striped">
+        <div class="form-field">
+         <label class="user" for="register-username"><span  >Please upload Your Picture</span></label>   
+         <input
+         style="display: none"
+         type="file" (change)="onFileChanged($event)"
+         #fileInput>
+         <button class="btn btn-primary btn-sm"  style="margin-right:10px; "  (click)="fileInput.click()">Select File</button>
+         <button class="btn btn-primary btn-sm" (click)="onUpload()">Upload!</button>
+      </div>
+        
+      </div>
+        
+        <div class="col-md-6">
+            <input type="text" class="form-control"  type="text"  name="search" [(ngModel)]="searchText" autocomplete="off" (input)="filterData()" placeholder="&#61442;  Start searching for a employee by  name "><br>
+            <table style="text-align: center;" class="table table-responsive table-striped">
+         <!-- <input type="text" class="form-control"  type="text"  name="search" [(ngModel)]="searchText" autocomplete="off" (input)="filterData()" placeholder="&#61442;  Start searching for a employee by  name "><br>
+           <table style="text-align: center;" class="table table-responsive table-striped"> -->
               <tr style="text-align: center;" >
-                 <th th scope="row" class="thwidth">id</th>
+                 <!-- <th th scope="row" class="thwidth">id</th> -->
                  <th th scope="row" class="thwidth">name</th>
                  <th th scope="row" class="thwidth">year</th>
                  <th th scope="row" class="thwidth">Phone</th>
@@ -83,17 +71,17 @@
                  <th th scope="row" class="thwidth">Action2</th>
               </tr>
               <tr *ngFor="let row of rows| paginate: config" >
-                 <td>{{row.id}}</td>
+                 <!-- <td>{{row.id}}</td> -->
                  <td>{{row.name}}</td>
                  <td>{{row.year|date:'dd.MM.yyyy'}}</td>
                  <td>{{row.Phone}}</td>
                  <td>{{row.Address}}</td>
                  <td> {{row.Salary| currency:"&#8377;"}}</td>
-                 <td><button class="btn btn-primary" (click)="buttondelete()"> delete</button></td>
-                 <td><button class="btn btn-primary" (click)="edit(row)"> edit</button></td>
+                 <td><button class="btn btn-outline-danger" (click)="buttondelete()"> delete</button></td>
+                 <td><button class="btn btn-outline-info" (click)="edit(row)"> edit</button></td>
               </tr>
            </table>
            <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
-           <div>
-           </div>
+           
+        </div>
         </div>

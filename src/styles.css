@@ -8,7 +8,7 @@
     background:rgba(2, 117, 50, 0.5);
     border-radius: 20px;
     box-shadow: 0 3.5px 0 0 rgba(0,0,0,0.1);
-    width:275px;
+   
     display: flex;  
     flex-direction: column;
   }
@@ -27,11 +27,10 @@
 	margin: 20px 20px 0;	
 	border-radius: 3px;
 }
-.form input[type="number"], .form input[type="text"]  {
-    width: 100%;
-    background-color:blue;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
+.form-field label{width: 60%;}
+.form-field input[type="number"], .form-field input[type="text"],.form-field input[type="date"]  {
+    width: 30%;
+    margin: 8px 0;
   }
   .hidden {
     border: 0;
@@ -43,26 +42,16 @@
     position: absolute;
     width: 1px;
   }
-  .form-field {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    margin-bottom: 2rem;
-  }
-  .user:before {
-    content: '\f007';
-    font: 14px fontawesome;
-      color:black;
-  }
+  
+  
 .thwidth{
     
     width: 145px;
 
 }
-input:hover, input:focus {
+/* input:hover, input:focus {
     background-color: burlywood;
     border: 3px solid rgb(0, 26, 255);
     color:#000000;
-   }
+   } */
   

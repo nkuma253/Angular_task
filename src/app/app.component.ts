@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 
 
+
 @Component({
+  
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
@@ -49,6 +51,8 @@ set count(value) {
   searchText:string =name;
   title = 'app';
   isEdit = false;
+   // public tempObj = [];
+  //  public data = JSON.parse(localStorage.getItem('myArr')) || [];
   selectedPrimaryId: number;
   public id: number;
   public name: string;
@@ -85,9 +89,43 @@ set count(value) {
       this.rowsCopy = [...this.rows];
     }
 
+
+    //  let myObj = {
+    //    'id' : this.id,
+    //       'name' : this.name,
+    //      'year' : this.year,
+    //       'Phone' : this.Phone,
+    //       'Address' : this.Address,
+    //       'Salary' : this.Salary,
+    //  };
+    
+    //this.tempObj.push(myObj);
+   
+    //localStorage.setItem('myArr', JSON.stringify(this.tempObj));
+    // localStorage.setItem('id', this.id);
+    // localStorage.setItem('name', this.name);
+    // localStorage.setItem('year', this.year);
+    // localStorage.setItem('Phone', this.Phone);
+    // localStorage.setItem('Address', this.Address);
+    // localStorage.setItem('Salary', this.Salary);
+
+
+  //    this.data = JSON.parse(localStorage.getItem('myArr')) || [];
+
+  //  console.log('localStorage:::', this.data)
+    //let myItem = localStorage.getItem(key);
+
     //if you want to clear input
+    
    
 
+  }
+  // ngOnIt(){
+  //   this.rows.push(localStorage.myArr);
+  // }
+  
+  row(arg0: string, row: any) {
+    throw new Error("Method not implemented.");
   }
 reset(){
 
